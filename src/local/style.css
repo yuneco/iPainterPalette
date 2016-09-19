@@ -1,0 +1,24 @@
+#paletteItems{
+    padding-right: 5%;
+}
+#paletteItems ul{
+    margin: 0;
+    padding: 0;
+
+}
+#paletteItems li{
+    width:  calc(50% - 22px);
+    float: left;
+    margin: 0 -1px -1px 0;
+    padding: 0 10px;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1.25em;
+    text-align:center;
+    overflow: hidden;
+    border: 1px solid gray;
+    background: #eee;
+}
+#paletteItems li:active{
+   background: gray; 
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
+        <script src="jquery-3.1.0.min.js"></script>        
+        <script src="vue.min.js"></script>        
+        <script src="ecl.js"></script>
+        <script src="unorm.js"></script>
+        <script src="painterapi.js"></script>
+        <script src="paintercp.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body id="vueapp">
+        <div id="settings">
+            <label for="auth-code">code : </label><input type="text" id="auth-code" v-model="settings.authCode">
+            <button v-on:click="connect">connect</button>
+        </div>
+        <div id="palettes">
+            <select id="palettes-select" v-model="selectedCpId" v-on:change="loadPaletteItems">
+                <option>select...</option>
+                <option v-for="pt in cplist.palettes" v-bind:value="pt.id">
+                    {{pt.id}} : {{pt.name}}
+                </option>
+            </select>
+        </div>        
+        <div id="paletteItems">
+            <ul>
+                <li v-for="item in selectedCpItems.cmds" v-on:click="execCmd(item)" ><!-- 削除：v-bind:style="{ backgroundImage: 'url('+item.itemImgUrl+')' }" -->
+                    {{item.props.name}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="vm.js"></script>
+    </body>
+
+</html>
