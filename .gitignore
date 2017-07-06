@@ -1,4 +1,3 @@
 
 .DS_Store
-
-src/node_modules/http-proxy
+node_modules
